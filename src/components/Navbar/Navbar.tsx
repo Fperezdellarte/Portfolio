@@ -59,7 +59,7 @@ const Navbar = () => {
                   "&::after":
                     active === section
                       ? {
-                           content: '""',
+                          content: '""',
                           position: "absolute",
                           bottom: -2,
                           left: 0,

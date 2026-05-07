@@ -64,7 +64,7 @@ const ProjectCard = ({ project, onClick }: Props) => {
             ))}
           </Stack>
 
-          <Stack direction="row" spacing={2} sx={{mt: 4}}>
+          <Stack direction="row" spacing={2}>
             {project.demo && (
               <Button size="small" variant="contained" href={project.demo} target="_blank" >
                 Demo
