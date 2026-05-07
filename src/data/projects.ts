@@ -30,6 +30,6 @@ export const projects: Project[] = [
     image: "/projects/portfolio.png",
     tech: ["React", "TypeScript", "MUI"],
     github: "https://github.com/Fperezdellarte/Portfolio",
-    demo: "https://tudemo.com",
+    demo: "https://portfolio-zd91.onrender.com",
   },
 ];
