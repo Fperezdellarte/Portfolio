@@ -45,7 +45,7 @@ const Navbar = () => {
       }}
     >
       <Toolbar sx={{ justifyContent: "center" }}>
-        <Box display="flex" gap={2}>
+        <Box sx={{ display: "flex", gap: 2 }}>
           {sections.map((section) => (
             <Button
               key={section}

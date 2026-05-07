@@ -31,8 +31,7 @@ const Footer = () => {
       <Stack 
             direction="row" 
             spacing={2}   
-            mb={2}
-            sx={{  display: "flex", justifyContent: "center", alignItems: "center" }}>
+            sx={{  display: "flex", justifyContent: "center", alignItems: "center", mb: 2 }}>
 
          <Box sx={{  display: "flex", justifyContent: "center", alignItems: "center", width: "100%" }}> 
             <IconButton

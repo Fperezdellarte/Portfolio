@@ -1,5 +1,5 @@
 import { Box, Typography, Grid } from "@mui/material";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { useState } from "react";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
 import ProjectModal from "../../components/ProjectModal/ProjectModal";
@@ -8,7 +8,7 @@ import type { Project } from "../../types";
 
 const MotionBox = motion.create(Box);
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: {},
   show: {
     transition: {
@@ -54,7 +54,7 @@ const Projects = () => {
       >
         <Grid container spacing={4}>
           {projects.map((project) => (
-            <Grid item xs={12} sm={6} md={4} key={project.id}>
+            <Grid size={{ xs: 12, sm: 6, md: 4 }} key={project.id}>
               <ProjectCard project={project} onClick={() => handleOpen(project)} />
             </Grid>
           ))}

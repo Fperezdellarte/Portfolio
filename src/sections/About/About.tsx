@@ -1,8 +1,8 @@
 import { Box, Typography, Grid, Paper, Stack } from "@mui/material";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import profileImg from "../../assets/profile.jpg";
 
-const item = {
+const item: Variants = {
   hidden: { opacity: 0, y: 40, filter: "blur(8px)" },
   show: {
     opacity: 1,
@@ -10,7 +10,7 @@ const item = {
     filter: "blur(0px)",
     transition: {
       duration: 0.6,
-      ease: [0.25, 0.1, 0.25, 1],
+      ease: "easeOut",
     },
   },
 };
@@ -48,9 +48,9 @@ const About = () => {
         ml: { md: "200px" },
       }}
     >
-      <Grid container spacing={6} alignItems="center">
+      <Grid container spacing={6} sx={{ alignItems: "flex-start" }}>
         
-        <Grid item xs={12} md={7} sx={{width: { xs: "80%", md: "60%" }}}>
+        <Grid size={{ xs: 12, md: 7 }} sx={{ width: { xs: "100%", md: "50%" } }}>
           <Paper
               sx={{
                 p: 4,
@@ -105,10 +105,9 @@ const About = () => {
             </Typography>
           </MotionBox>
 
-          {/* Stats */}
           <Stack direction="row" spacing={4} sx={{ mt: 4 }}>
             <Box>
-              <Typography variant="h5" fontWeight="bold">
+              <Typography variant="h5" sx={{ fontWeight: "bold" }}>
                 +3
               </Typography>
               <Typography variant="body2" color="text.secondary">
@@ -116,7 +115,7 @@ const About = () => {
               </Typography>
             </Box>
             <Box>
-              <Typography variant="h5" fontWeight="bold">
+              <Typography variant="h5" sx={{ fontWeight: "bold" }}>
                 +4
               </Typography>
               <Typography variant="body2" color="text.secondary">
@@ -127,7 +126,7 @@ const About = () => {
             </Paper>
         </Grid>
 
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: 8, md: 3 }} sx={{mt: 5 , ml: 10, xs: {ml: 0} }}>
           <Stack spacing={3}>
             {cards.map((itemData, index) => (
               <MotionBox
@@ -146,7 +145,8 @@ const About = () => {
                     backgroundColor: "background.paper",
                     transition: "all 0.3s ease",
                     backdropFilter: "blur(10px)",
-                    mt: 5,
+                    mt: 2,
+                    mb: 2,
                     "&:hover": {
                       transform: "translateY(-6px)",
                       boxShadow: "0 12px 35px rgba(0,0,0,0.35)",
@@ -154,7 +154,7 @@ const About = () => {
                   }}
                 >
                   <Stack spacing={1}>
-                    <Typography variant="h6" fontWeight="bold">
+                    <Typography variant="h6" sx={{ fontWeight: "bold" }}>
                       {itemData.title}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">

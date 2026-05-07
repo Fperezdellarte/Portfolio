@@ -8,8 +8,15 @@ import {
   Button,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
+import type { Project } from "../../types";
 
-const ProjectModal = ({ open, onClose, project }) => {
+type Props = {
+  open: boolean;
+  onClose: () => void;
+  project: Project | null;
+};
+
+const ProjectModal = ({ open, onClose, project }: Props) =>  {
   if (!project) return null;
 
   return (
@@ -22,7 +29,7 @@ const ProjectModal = ({ open, onClose, project }) => {
         "& .MuiPaper-root": {
           borderRadius: 1,
           position: "relative",
-          overflow: "visible", // 👈 CLAVE
+          overflow: "visible",
         },
       }}
     >
@@ -51,7 +58,7 @@ const ProjectModal = ({ open, onClose, project }) => {
           sx={{ width: "100%", mb: 3 }}
         />
 
-        <Typography variant="h5" mb={2}>
+        <Typography variant="h5" sx={{ mb: 2 }}>
           {project.title}
         </Typography>
 

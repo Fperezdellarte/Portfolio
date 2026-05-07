@@ -1,8 +1,8 @@
 import { Box, Typography, Button, Stack } from "@mui/material";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 const MotionBox = motion.create(Box);
-const container = {
+const container: Variants = {
   hidden: {},
   show: {
     transition: {
@@ -12,7 +12,7 @@ const container = {
   },
 };
 
-const item = {
+const item: Variants = {
   hidden: { opacity: 0, y: 40, filter: "blur(10px)" },
   show: {
     opacity: 1,
@@ -20,7 +20,7 @@ const item = {
     filter: "blur(0px)",
     transition: {
       duration: 0.8,
-      ease: [0.25, 0.1, 0.25, 1], // curva tipo Apple
+      ease: "easeOut",
     },
   },
 };
